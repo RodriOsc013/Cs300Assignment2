@@ -1,0 +1,134 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height:1;
+    background:aqua;
+    color:#3a3a3a;
+}
+header{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:.3rem;
+}
+header h1{
+    margin-bottom:0.3rem;
+    font-size: 1.5rem;
+}
+.navbar{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.logo img{
+    width:4.5rem;
+    height:auto;
+    margin-bottom:.5rem;
+}
+.navbar ul{ /*styles the navbar unordered list*/
+    list-style:none;
+    width:100%;
+    text-align:center;
+}
+.navbar li{ /*styles list items that make up the navbar*/
+    border-bottom:.1rem solid #444;
+}
+.navbar a{ /*Style all anchors*/
+    display:block;
+    padding:0.2rem;
+    color:white;
+    text-decoration:none;
+}
+main{
+    padding:1rem;
+}
+#home{ /*hides the word home but allows it to be clicked on the navbar*/
+    display:none;
+}
+section{ /*section styling*/
+    margin-bottom:1rem;
+}
+section h2{
+    margin-bottom:0.5rem;
+    font-size: 1rem;
+}
+.button-wrapper{
+    margin-top:1rem;
+}
+.button{ /*styles the button and allows it to be visable*/
+    display:inline-block;
+    padding:0.7rem 1.2rem;
+    background:#0077ff;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+.button:hover{
+    background:#005ecc;
+}
+#gallery{ /*create a grid to hold imgs*/
+    display:grid;
+    grid-template-columns:1fr;
+    gap:.5rem;
+}
+#gallery img{ /*image styling*/
+    width:100%;
+    border-radius:1rem;
+}
+footer{ /*footer styles*/
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:.8rem;
+}
+@media (min-width: 728px){ /*Tablet resizing*/
+    .navbar ul{
+        display:flex;
+        justify-content:center;
+        gap:15px;
+    }
+    .navbar li{
+        border:none;
+    }
+    #gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+    #gallery h2,
+    #gallery p{ /*allows me to move the paragraph below the header so its not split away with the images*/
+        grid-column: 1 / -1;
+    }
+    #gallery img{
+        max-width:100%;
+    }
+}
+@media (min-width: 1024px){ /*Desktop resizing*/
+    header{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:1rem 2rem;
+    }
+    .navbar{
+        flex-direction:row;
+    }
+    .logo{
+        margin-right:20px;
+    }
+    main{
+        max-width:1024px;
+        margin:auto;
+    }
+    #gallery{ /*column template*/
+        grid-template-columns:repeat(3,1fr);
+    }
+    #gallery img{
+        max-width:100%;
+    }
+}
